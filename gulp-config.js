@@ -14,7 +14,7 @@ module.exports = {
     mainScss: 'style.scss',
     mainScssMin: 'style.min.css',
     vendorScss: 'vendor.scss',
-    vendorScssMin: 'vendor.min.css',
+    vendorScssMin: 'vendor.min.css'
   },
   task: {
     esLint: 'es-lint',
@@ -25,7 +25,7 @@ module.exports = {
     buildStylesVendors: 'build-styles-vendors',
     cleanBuild: 'clean-build',
     copyFolders: 'copy-folders',
-    watch: 'watch',
+    watch: 'watch'
   },
   autoprefixer: {
     versions: 'last 4 versions'

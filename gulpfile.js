@@ -189,22 +189,6 @@
   ));
 
   /**
-   * Dev Gulp task without usage of browserSync
-   */
-  gulp.task('dev', gulp.series(
-    cfg.task.cleanBuild,
-    gulp.parallel(
-      cfg.task.buildCustomJs,
-      cfg.task.buildJsVendors,
-      cfg.task.buildSass,
-      cfg.task.buildSassFiles,
-      cfg.task.buildStylesVendors
-    ),
-    cfg.task.copyFolders,
-    cfg.task.watch
-  ));
-
-  /**
    * Remove image(s) from build folder if corresponding
    * images were deleted from source folder
    * @param  {Object} event    Event object
