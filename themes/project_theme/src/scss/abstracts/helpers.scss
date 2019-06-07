@@ -1,0 +1,109 @@
+// This is the most used helpers.
+//
+// You can remove or add your own helpers in this file.
+
+// // // // // //
+// Flex elements
+// // // // // //
+
+%flex-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+%flex-column {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+%ai-flex-start {
+  align-items: flex-start;
+}
+
+%ai-center {
+  align-items: center;
+}
+
+%ai-flex-end {
+  align-items: flex-end;
+}
+
+%jc-flex-start {
+  justify-content: flex-start;
+}
+
+%jc-center {
+  justify-content: center;
+}
+
+%jc-flex-end {
+  justify-content: flex-end;
+}
+
+// // // // //
+// Visibility 
+// // // // //
+
+.hidden-desktop {
+  @include media('>tablet-lg') {
+    display: none !important;
+  }
+}
+
+.visible-desktop {
+  @include media('>tablet-lg') {
+    display: block !important;
+  }
+}
+
+.hidden-tablet {
+  @include media('>=tablet-sm', '<desktop-sm') {
+    display: none !important;
+  }
+}
+
+.visible-tablet {
+  @include media('>=tablet-sm', '<desktop-sm') {
+    display: block !important;
+  }
+}
+
+.hidden-mobile {
+  @include media('>=phone-sm', '<tablet-sm') {
+    display: none !important;
+  }
+}
+
+.visible-mobile {
+  @include media('>=phone-sm', '<tablet-sm') {
+    display: block !important;
+  }
+}
+
+// // // //
+// Resets
+// // // //
+
+%indentreset {
+  margin: 0;
+  padding: 0;
+}
+
+%listreset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/// * Helper class to truncate and add ellipsis to a string too long for it to fit
+/// * on a single line.
+/// * 1. Prevent content from wrapping, forcing it on a single line.
+/// * 2. Add ellipsis at the end of the line.
+
+.ellipsis {
+  white-space: nowrap; // 1
+  text-overflow: ellipsis; // 2 
+  overflow: hidden;
+}

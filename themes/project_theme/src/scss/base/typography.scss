@@ -1,0 +1,87 @@
+// Typography
+//
+// Base font styles for headings and links.
+
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  font-family: map-get($fonts, 'Bold');
+  line-height: 1.24em;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6,
+.h {
+  margin: 0;
+}
+
+h1, .h1 {
+  font-size: map-get($font-size, 'h1-font-size');
+  line-height: map-get($line-height, 'h1-line-height');
+}
+
+h2, .h2 {
+  font-size: map-get($font-size, 'h2-font-size');
+  line-height: map-get($line-height, 'h2-line-height');
+}
+
+h3, .h3 {
+  font-size: map-get($font-size, 'h3-font-size');
+  line-height: map-get($line-height, 'h3-line-height');
+}
+
+h4, .h4 {
+  font-size: map-get($font-size, 'h4-font-size');
+  line-height: map-get($line-height, 'h4-line-height');
+}
+
+h5, .h5 {
+  font-size: map-get($font-size, 'h5-font-size');
+  line-height: map-get($line-height, 'h5-line-height');
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+a {
+  color: map-deep-get($colors, 'base', 'link-color');
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+blockquote {
+  font-style: italic;
+  margin: 0 1.2em 1.24em;
+}
+
+ul, ol {
+  margin: 0 0 1em;
+  padding: 0 1em;
+  li {
+    padding: 0;
+    margin: 0 0 1em;
+  }
+  ul, ol {
+    margin: 1em 0 1em;
+  }
+}
+
+ol {
+  list-style-type: none;
+  counter-reset: section;
+  li:before {
+    counter-increment: section;
+    content: counters(section, ".") ". ";
+  }
+}

@@ -1,0 +1,107 @@
+// Global variables
+//
+// Base font styles for headings and links.
+
+$animation-time: .3s;
+$preloader-antimation-time: 1.8s;
+
+$grid: (
+  'container': (
+    'desktop-lg': 1920px,
+    'desktop-md': 1450px,
+    'desktop': 1170px,
+    'tablet': 970px,
+    'tablet-sm': 615px,
+    'phone': 100%
+  ),
+  'columns-number': (
+    'desktop': 12,
+    'tablet': 12,
+    'mobile': 4
+  ),
+);
+
+$font-size: (
+  'h1-font-size': 90px,
+  'h2-font-size': 75px,
+  'h3-font-size': 48px,
+  'h4-font-size': 30px,
+  'h5-font-size': 28px,
+  'h6-font-size': 18px,
+  'base': 16px
+);
+
+$line-height: (
+  'h1-line-height': 1.5,
+  'h2-line-height': 1.5,
+  'h3-line-height': 1.5,
+  'h4-line-height': 1.5,
+  'h5-line-height': 1.5,
+  'h6-line-height': 1.5,
+  'base': 24px
+);
+
+$fonts: (
+  'base-sans-serif': unquote("Arial, 'Helvetica Neue', Helvetica, sans-serif"),
+  'base-serif': unquote("'Times New Roman', Times, Baskerville, Georgia, serif")
+);
+
+$colors: (
+  'base': (
+    'white': #fff,
+    'black': #000,
+    'lighten-black': lighten(#000, 15%),
+    'link-color': #39F,
+    'selection': #B4D5FF
+  ),
+  'theme': (
+    'yellow': #FDE93C,
+    'dark': #222,
+    'satan': #666,
+    'grey': #f8f8f8,
+    'error': #ff3c3c,
+    'placeholder': #999
+  )
+);
+
+// Vars for forms
+$forms: (
+  'form-font-family': unquote("Arial, 'Helvetica Neue', Helvetica, sans-serif"),
+  'form-element-padding': unquote("0.4em 0.7em"),
+  'form-element-border-color': #999,
+  'form-element-focus-border-color': #000,
+  'placeholder-color': #999
+);
+
+// Base media breakpoints
+$breakpoints: (
+  'desktop-lg': 2560px,
+  'desktop-md': 1440px,
+  'desktop-sm': 1200px,
+  'tablet-lg' : 1024px,
+  'tablet-md' : 980px,
+  'tablet-sm' : 768px,
+  'phone-lg'  : 480px,
+  'phone-md'  : 375px,
+  'phone-sm'  : 320px
+);
+
+// Keywords for include media mixin
+$media-expressions: (
+  'screen': 'screen',
+  'print': 'print',
+  'handheld': 'handheld',
+  'landscape': '(orientation: landscape)',
+  'portrait': '(orientation: portrait)',
+  'retina2x': '(-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)',
+  'retina3x': '(-webkit-min-device-pixel-ratio: 2.5), (min-resolution: 240dpi)'
+);
+
+// z-indexes, using: z-index: z('SEMANTIC_VALUE');
+$z-indexes: (
+  'preloader',        // 5
+  'modal',            // 4
+  'hight',            // 3
+  'content',          // 2
+  'low'               // 1
+);
