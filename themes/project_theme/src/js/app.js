@@ -4,10 +4,12 @@
 // Feel free with using ES6 here.
 
 // import {NAME} from './modules/...';
+import pageScroll from './modules/pageScroll';
 
 (($) => {
   // When DOM is ready
   $(() => {
-    // ...
+    $('#currentYear').text(`${new Date().getFullYear()}`);
+    pageScroll.init();
   });
 })(jQuery);
