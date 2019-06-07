@@ -1,8 +1,8 @@
 # Hugo default output directory 
-/-W
-/-d
-/public
-/resources
+-W/
+-d/
+public/
+resources/
 
 # Dependency
 node_modules/
@@ -17,3 +17,6 @@ $RECYCLE.BIN/
 
 # OSX
 *.DS_Store
+
+# Gulp build files
+assets/
