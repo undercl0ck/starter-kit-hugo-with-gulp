@@ -20,7 +20,7 @@ module.exports = function(options) {
     return gulp.src(filesExist(jsVendors))
       .pipe(concat(options.vendorJsMin))
       .pipe(uglify())
-      .pipe(gulp.dest(`./themes/${options.theme}/static/${options.dest}/js`));
+      .pipe(gulp.dest(`./themes/${options.theme}/${options.dest}/js`));
   };
 
 };

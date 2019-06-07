@@ -21,7 +21,7 @@ module.exports = function(options) {
       .pipe(cssnano({
         safe: true
       }))
-      .pipe(gulp.dest(`./themes/${options.theme}/static/${options.dest}/css`));
+      .pipe(gulp.dest(`./themes/${options.theme}/${options.dest}/css`));
   };
 
 };

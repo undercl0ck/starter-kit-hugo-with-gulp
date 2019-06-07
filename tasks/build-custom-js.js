@@ -23,7 +23,7 @@ module.exports = function(options) {
         options.showError.apply(this, ['JS error', err])
       })
       .pipe(source('app.js'))
-      .pipe(gulp.dest(`./themes/${options.theme}/static/${options.dest}/js`));
+      .pipe(gulp.dest(`./themes/${options.theme}/${options.dest}/js`));
   };
 
 };
