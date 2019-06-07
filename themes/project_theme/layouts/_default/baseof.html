@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    {{ partial "head/meta.html" }}
+    {{ partial "head/favicon.html" }}
+    <title>{{ .Title }}</title>
+
+    {{ $cssVendor := resources.Get "css/vendor.min.css" }}
+    {{ $style := resources.Get "css/style.min.css" }}
+    {{ $css := slice $cssVendor $style | resources.Concat "assets/css/styles.css" | resources.Minify }}
+    <link rel="stylesheet" href="{{ $css.Permalink }}">
+
+  </head>
+
+<body>
+
+  <div id="wrapper">
+
+    {{ block "header" . }}{{ partial "header.html" . }}{{ end }}
+
+    <!-- Main start -->
+    <main class="page-main">
+        {{ block "main" . }}{{ end }}
+    </main>
+    <!-- Main end -->
+
+    {{ block "footer" . }}{{ partial "footer.html" . }}{{ end }}
+
+  </div>
+
+  {{ $jsVendor := resources.Get "js/vendor.min.js" }}
+  {{ $app := resources.Get "js/app.js" }}
+  {{ $js := slice $jsVendor $app | resources.Concat "assets/js/common.js" | resources.Minify }}
+
+  <script src="{{ $js.Permalink }}" defer></script>
+
+</body>
+</html>
