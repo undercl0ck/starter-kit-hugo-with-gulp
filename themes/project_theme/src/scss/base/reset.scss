@@ -1,0 +1,53 @@
+// This is base reset for global components.
+//
+// Note: If you use a framework that includes base styling then you need to remove this file.
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+*::selection {
+  background: map-deep-get($colors, 'base', 'selection');
+  color: inherit;
+}
+
+body {
+  @include font-smoothing(on);
+  background: map-deep-get($colors, 'base', 'white');
+  color: map-deep-get($colors, 'base', 'lighten-black');
+  font: #{map-get($font-size, 'base')}/#{map-get($line-height, 'base')} #{map-get($fonts, 'Medium')};
+  min-width: map-get($breakpoints, 'phone-sm');
+  height: 100%;
+}
+
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  position: relative;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+// adaptive images
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+// hide tel links on desktop
+@media only screen and (min-width: 1025px) {
+    a[href^="tel"], a[href^="skype"], a[href^="sms"] {
+    cursor: default;
+    pointer-events: none;
+  }
+}

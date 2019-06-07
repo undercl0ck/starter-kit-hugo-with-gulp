@@ -1,0 +1,146 @@
+.container,
+.container-fluid {
+  position: relative;
+  max-width: map-deep-get($grid, 'container', 'desktop-lg');
+  width: 100%;
+  height: inherit;
+  margin: 0 auto;
+  padding: 0 15px;
+  @include media('<desktop-lg') {
+    max-width: map-deep-get($grid, 'container', 'desktop-md');
+  }
+  @include media('<=desktop-md'){
+    max-width: map-deep-get($grid, 'container', 'desktop');
+  }
+  @include media('<desktop-sm'){
+    max-width: map-deep-get($grid, 'container', 'tablet');
+  }
+  @include media('<tablet-lg'){
+    max-width: map-deep-get($grid, 'container', 'tablet-sm');
+  }
+  @include media('<tablet-sm') {
+    max-width: map-deep-get($grid, 'container', 'phone');
+  }
+}
+
+[class^="col-"] {
+  padding: 0 15px;
+}
+
+// 
+// Desktop grid, using from 981px
+// 
+
+$columns-width-default: ();
+
+@for $i from 1 through map-deep-get($grid, 'columns-number', 'desktop') {
+  $columns-width-default: append($columns-width-default, $i * 100%/#{map-deep-get($grid, 'columns-number', 'desktop')});
+}
+
+@for $i from 1 through length($columns-width-default) {
+  @include media('>tablet-lg') {
+    .col-#{$i} {
+      width: nth($columns-width-default, $i);
+    }
+  }
+}
+
+@for $i from 1 through length($columns-width-default) {
+  @include media('>tablet-lg') {
+    .col-offset-#{$i} {
+      margin-left: nth($columns-width-default, $i) !important;
+    }
+  }
+}
+
+.col-offset-none {
+  @include media('>tablet-lg') {
+    margin-left: 0 !important;
+  }
+}
+
+@for $i from 1 through 5 {
+  .order-#{$i} {
+    @include media('>tablet-lg') {
+      order: #{$i} !important;
+    }
+  }
+}
+
+// 
+// Tablet grid, using from 768px to 1023px 
+//
+$columns-width-tablet: ();
+
+@for $i from 1 through map-deep-get($grid, 'columns-number', 'tablet') {
+  $columns-width-tablet: append($columns-width-tablet, $i * 100%/#{map-deep-get($grid, 'columns-number', 'tablet')});
+}
+
+@for $i from 1 through length($columns-width-tablet) {
+  @include media('>=tablet-sm', '<desktop-sm') {
+    .col-t-#{$i} {
+      width: nth($columns-width-tablet, $i);
+    }
+  }
+}
+
+@for $i from 1 through length($columns-width-tablet) {
+  @include media('>=tablet-sm', '<desktop-sm') {
+    .col-t-offset-#{$i} {
+      margin-left: nth($columns-width-tablet, $i) !important;
+    }
+  }
+}
+
+.col-t-offset-none {
+  @include media('>=tablet-sm', '<desktop-sm') {
+    margin-left: 0 !important;
+  }
+}
+
+@for $i from 1 through 5 {
+  .t-order-#{$i} {
+    @include media('>=tablet-sm', '<desktop-sm') {
+      order: #{$i} !important;
+    }
+  }
+}
+
+// 
+// Mobile grid, using from 320px to 767px 
+//
+$columns-width-mobile: ();
+
+@for $i from 1 through map-deep-get($grid, 'columns-number', 'mobile') {
+  $columns-width-mobile: append($columns-width-mobile, $i * 100%/#{map-deep-get($grid, 'columns-number', 'mobile')});
+}
+
+@for $i from 1 through length($columns-width-mobile) {
+  @include media('>=phone-sm', '<tablet-sm') {
+    .col-m-#{$i} {
+      width: nth($columns-width-mobile, $i);
+    }
+  }
+}
+
+@for $i from 1 through length($columns-width-mobile) {
+  @include media('>=phone-sm', '<tablet-sm') {
+    .col-m-offset-#{$i} {
+      margin-left: nth($columns-width-mobile, $i) !important;
+    }
+  }
+}
+
+.col-m-offset-none {
+  @include media('>=phone-sm', '<tablet-sm') {
+    margin-left: 0 !important;
+  }
+}
+
+@for $i from 1 through 5 {
+  .m-order-#{$i} {
+    @include media('>=phone-sm', '<tablet-sm') {
+      order: #{$i} !important;
+    }
+  }
+}
