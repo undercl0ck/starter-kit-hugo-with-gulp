@@ -61,6 +61,7 @@ gulp-config.js -> theme
 ## Project Structure
 
 ````
+
 ├── archetypes        #You can create new content files in Hugo using the `hugo new` command
 ├── content           #All content for your website will live inside this directory.
 ├── data              #This directory is used to store configuration files
@@ -78,6 +79,7 @@ gulp-config.js -> theme
 ## Theme Structure
 
 ```
+
 ├── assets          #Folder with JS and CSS files after compiling
 ├── layouts         #Stores templates in the form of .html files
 ├── src             #Folder with sources
@@ -86,7 +88,9 @@ gulp-config.js -> theme
 ```
 
 ## SRC folder structure
+
 ```
+
 ├── js                          #Folder for storing js files
    ├── modules                  #Folder for storing js modules
    ├── app.js                   #Main js file
