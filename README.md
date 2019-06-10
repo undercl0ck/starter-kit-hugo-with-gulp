@@ -40,7 +40,7 @@ $ npm install
 
 That's it! You should now have everything needed to use the Starter Kit.
 
-## Build & Optimize
+## Build
 
 You must work with the source files in the **"src"** folder, using the collector, source files are compiled into **"assets"** folder.
 
