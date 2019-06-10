@@ -53,7 +53,7 @@ $ gulp
 To run Hugo server and start watching for changes:
 
 ````
-$ hugo server -d -W
+$ hugo server -D -w
 ````
 
 If you want to **change the name of your theme**, you need to make changes to
