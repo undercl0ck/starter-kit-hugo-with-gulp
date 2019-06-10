@@ -8,7 +8,9 @@ const gulp         = require('gulp'),
       rename       = require('gulp-rename'),
       sourcemaps   = require('gulp-sourcemaps'),
       notifier     = require('node-notifier'),
-      autoprefixer = require('gulp-autoprefixer');
+      autoprefixer = require('gulp-autoprefixer'),
+      gcmq         = require('gulp-group-css-media-queries'),
+      cssnano      = require('gulp-cssnano');
 
 module.exports = function(options) {
 
@@ -16,10 +18,14 @@ module.exports = function(options) {
     return gulp.src(`./themes/${options.theme}/${options.src}/scss/${options.mainScss}`)
       .pipe(rename(options.mainScssMin))
       .pipe(sourcemaps.init({
-        loadMaps: true
+        loadMaps: false
       }))
       .pipe(sass().on('error', function(err) {
         options.showError.apply(this, ['Sass compile error', err]);
+      }))
+      .pipe(gcmq())
+      .pipe(cssnano({
+        safe: true
       }))
       .pipe(autoprefixer(options.versions))
       .pipe(sourcemaps.write('./'))
