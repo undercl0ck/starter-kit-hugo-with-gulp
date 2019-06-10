@@ -44,16 +44,10 @@ That's it! You should now have everything needed to use the Starter Kit.
 
 You must work with the source files in the **"src"** folder, using the collector, source files are compiled into **"assets"** folder.
 
-To compile SASS and JS and start watching for changes use:
+To compile SASS and JS, build Hugo and start watching for changes use for source files:
 
 ````
 $ gulp
-````
-
-To build Hugo use:
-
-````
-$ hugo
 ````
 
 To run Hugo server and start watching for changes:

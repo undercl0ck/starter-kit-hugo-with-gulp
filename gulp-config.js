@@ -25,7 +25,8 @@ module.exports = {
     buildStylesVendors: 'build-styles-vendors',
     cleanBuild: 'clean-build',
     copyFolders: 'copy-folders',
-    watch: 'watch'
+    watch: 'watch',
+    hugo: 'buildHugo'
   },
   autoprefixer: {
     versions: 'last 4 versions'

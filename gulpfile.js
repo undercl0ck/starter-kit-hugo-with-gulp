@@ -7,7 +7,8 @@
         del         = require('del'),
         path        = require('path'),
         notifier    = require('node-notifier'),
-        gutil       = require('gulp-util');
+        gutil       = require('gulp-util'),
+        shell       = require('gulp-shell');
 
   /**
    * Require gulp task from file
@@ -150,6 +151,11 @@
     dest: cfg.folder.build,
     foldersToCopy: cfg.getPathesToCopy()
   });
+  
+  /**
+   * Build Hugo
+   */
+  gulp.task('buildHugo', shell.task('hugo'));
 
   /**
    * Watch for file changes
@@ -183,6 +189,7 @@
       cfg.task.esLint,
     ),
     cfg.task.copyFolders,
+    cfg.task.hugo,
     gulp.parallel(
       cfg.task.watch
     )
