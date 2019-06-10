@@ -139,9 +139,9 @@ JavaScript code linting is done using esLint - a linter tool for identifying and
 
 ## SCSS
 
-In our WSK you can use [SASS](http://sass-lang.com/). Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.
+You can use [SASS](http://sass-lang.com/). Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.
 
-Sass is a CSS preprocessor — a layer between the stylesheets you author and the .css files you serve to the browser. Sass (short for Syntactically Awesome Stylesheets) plugs the holes in CSS as a language, allowing you to write DRY code that’ll be faster, more efficient, and easier to maintain. In our WSK we follow Sass [guidelines](https://sass-guidelin.es/#architecture).
+Sass is a CSS preprocessor — a layer between the stylesheets you author and the .css files you serve to the browser. Sass (short for Syntactically Awesome Stylesheets) plugs the holes in CSS as a language, allowing you to write DRY code that’ll be faster, more efficient, and easier to maintain. This Starter Kit is following Sass [guidelines](https://sass-guidelin.es/#architecture).
 
 So while normal CSS doesn’t yet allow things like variables, mixins (reusable blocks of styles), and other goodies, Sass provides a syntax that does all of that and more—enabling “super functionality” in addition to your normal CSS.  
 
