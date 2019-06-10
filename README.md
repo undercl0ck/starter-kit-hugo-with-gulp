@@ -2,6 +2,8 @@
 
 ## Quickstart & Prerequisites
 
+### [Hugo](https://gohugo.io/)
+
 If you are on macOS and using Homebrew, you can install Hugo with the following one-liner:
 
 ````
@@ -9,6 +11,8 @@ $ brew install hugo
 ````
 
 For more detailed explanations, read the installation guides that follow for [installing on macOS and Windows](https://gohugo.io/getting-started/installing/).
+
+### [Node.js](https://nodejs.org)
 
 Bring up a terminal and type `$ node -v`.
 Node should respond with a version at or above 6.0.x.
