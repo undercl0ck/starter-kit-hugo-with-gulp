@@ -122,7 +122,7 @@
   /**
    * Build Hugo
    */
-  gulp.task(`${cfg.task.buildHugo}`, shell.task('hugo'));
+  gulp.task(`${cfg.task.buildHugo}`, shell.task('hugo --minify'));
 
   /**
    * Watch for file changes
