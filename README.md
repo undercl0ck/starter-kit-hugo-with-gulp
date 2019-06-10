@@ -1,4 +1,4 @@
-# Starter-kit for Hugo Framework with Gulp
+# Starter Kit for Hugo Framework with Gulp
 
 ## Quickstart & Prerequisites
 
@@ -25,10 +25,20 @@ If Gulp is installed it should return a version number at or above 4.0.x.
 If you need to install/upgrade Gulp, open up a terminal and type in the following:
 
 ````
-$ npm install --global gulp
+$ npm install -g gulp
 ````
 
 *This will install Gulp globally. Depending on your user account, you may need to [configure your system](https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md) to install packages globally without administrative privileges.*
+
+### Local dependencies
+
+Next, install the local dependencies Starter Kit requires:
+
+````
+$ npm install
+````
+
+That's it! You should now have everything needed to use the Starter Kit.
 
 ## Build & Optimize
 
