@@ -10,7 +10,7 @@ module.exports = function(options) {
 
   return () => {
     return del([
-      `${options.src}/**/*`
+      `themes/${options.theme}/${options.src}/`
     ], { dot: true });
   };
 };

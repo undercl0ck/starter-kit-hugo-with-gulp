@@ -20,9 +20,6 @@
   function requireTask(taskName, path, options, dependencies) {
     let settings = options || {};
     const taskFunction = function (callback) {
-      // if (settings.checkProduction) {
-      //   settings.isProduction = process.argv[process.argv.length - 1] === 'production';
-      // }
 
       let task = require(path + taskName + '.js').call(this, settings);
 
@@ -57,7 +54,6 @@
     dest: cfg.folder.build,
     theme: cfg.folder.theme,
     mainJs: cfg.file.mainJs,
-    // checkProduction: true,
     showError: showError
   });
 
@@ -99,18 +95,6 @@
   });
 
   /**
-   * Build production styles for application from SASS
-   */
-  requireTask(`${cfg.task.buildSassProd}`, `./${cfg.folder.tasks}/`, {
-    src: cfg.folder.src,
-    dest: cfg.folder.build,
-    mainScss: cfg.file.mainScss,
-    mainScssMin: cfg.file.mainScssMin,
-    versions: cfg.autoprefixer.versions,
-    showError: showError
-  });
-
-  /**
    * Build styles for vendor from SASS
    */
   requireTask(`${cfg.task.buildStylesVendors}`, `./${cfg.folder.tasks}/`, {
@@ -123,39 +107,22 @@
   });
 
   /**
-   * Minify images
-   */
-  requireTask(`${cfg.task.imageMin}`, `./${cfg.folder.tasks}/`, {
-    src: cfg.folder.src,
-    dest: cfg.folder.build
-  });
-
-  /**
-   * Clean image build directory
-   */
-  requireTask(`${cfg.task.imageClean}`, `./${cfg.folder.tasks}/`, {
-    src: cfg.folder.build
-  });
-
-  /**
    * Clean build folder
    */
   requireTask(`${cfg.task.cleanBuild}`, `./${cfg.folder.tasks}/`, {
-    src: cfg.folder.build
+    src: cfg.folder.build,
+    theme: cfg.folder.theme
   });
 
   /**
-   * Copy folders to the build folder
+   * Clean public dir
    */
-  requireTask(`${cfg.task.copyFolders}`, `./${cfg.folder.tasks}/`, {
-    dest: cfg.folder.build,
-    foldersToCopy: cfg.getPathesToCopy()
-  });
+  gulp.task(`${cfg.task.cleanPublic}`, shell.task('rm -rf public'));
   
   /**
    * Build Hugo
    */
-  gulp.task('buildHugo', shell.task('hugo'));
+  gulp.task(`${cfg.task.buildHugo}`, shell.task('hugo'));
 
   /**
    * Watch for file changes
@@ -165,8 +132,6 @@
     src: cfg.folder.src,
     dest: cfg.folder.build,
     theme: cfg.folder.theme,
-    imageExtensions: cfg.imageExtensions,
-    deleteFile: deleteFile,
     tasks: {
       buildSassFiles: cfg.task.buildSassFiles,
       buildCustomJs: cfg.task.buildCustomJs,
@@ -179,43 +144,24 @@
    * Default Gulp task
    */
   gulp.task('default', gulp.series(
-    cfg.task.cleanBuild,
+    gulp.parallel(
+      cfg.task.cleanBuild,
+      cfg.task.cleanPublic
+    ),
     gulp.parallel(
       cfg.task.buildCustomJs,
       cfg.task.buildJsVendors,
       cfg.task.buildSass,
       cfg.task.buildSassFiles,
       cfg.task.buildStylesVendors,
-      cfg.task.esLint,
+      cfg.task.esLint
     ),
-    cfg.task.copyFolders,
-    cfg.task.hugo,
+    // cfg.task.copyFolders,
+    cfg.task.buildHugo,
     gulp.parallel(
       cfg.task.watch
     )
   ));
-
-  /**
-   * Remove image(s) from build folder if corresponding
-   * images were deleted from source folder
-   * @param  {Object} event    Event object
-   * @param  {String} src      Name of the source folder
-   * @param  {String} dest     Name of the destination folder
-   */
-  function deleteFile(file, src, dest) {
-    let fileName = file.path.toString().split('/').pop();
-    let fileEventWord = file.event == 'unlink' ? 'deleted' : file.event;
-
-    let filePathFromSrc = path.relative(path.resolve(src), file.path);
-    let destFilePath = path.resolve(dest, filePathFromSrc);
-
-    try {
-      del.sync(destFilePath);
-      console.log(` \u{1b}[32m${fileEventWord}: ${fileName}\u{1b}[0m`);
-    } catch (error) {
-      console.log(` \u{1b}[31mFile has already deleted\u{1b}[0m`);
-    }
-  }
 
   /**
    * Show error in console
