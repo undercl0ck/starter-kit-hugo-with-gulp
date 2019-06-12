@@ -17,6 +17,3 @@ $RECYCLE.BIN/
 
 # OSX
 *.DS_Store
-
-# Gulp build files
-assets/
