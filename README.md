@@ -56,6 +56,9 @@ To run Hugo server and start watching for changes:
 $ hugo server -D -w
 ````
 
+**-D** - include content marked as draft
+**-w** - watch filesystem for changes and recreate as needed
+
 If you want to **change the name of your theme**, you need to make changes to
 
 ````
