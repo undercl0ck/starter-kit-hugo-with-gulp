@@ -6,38 +6,46 @@
 // Flex elements
 // // // // // //
 
+.flex-row,
 %flex-row {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
+.flex-column,
 %flex-column {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
 }
 
+.ai-flex-start,
 %ai-flex-start {
   align-items: flex-start;
 }
 
+.ai-cetner,
 %ai-center {
   align-items: center;
 }
 
+.ai-flex-end,
 %ai-flex-end {
   align-items: flex-end;
 }
 
+.jc-flex-start,
 %jc-flex-start {
   justify-content: flex-start;
 }
 
+.jc-center,
 %jc-center {
   justify-content: center;
 }
 
+.jc-flex-end,
 %jc-flex-end {
   justify-content: flex-end;
 }
@@ -46,37 +54,43 @@
 // Visibility 
 // // // // //
 
-.hidden-desktop {
+.hidden-desktop,
+%hidden-desktop {
   @include media('>tablet-lg') {
     display: none !important;
   }
 }
 
-.visible-desktop {
+.visible-desktop,
+%visible-desktop {
   @include media('>tablet-lg') {
     display: block !important;
   }
 }
 
-.hidden-tablet {
+.hidden-tablet,
+%hidden-tablet {
   @include media('>=tablet-sm', '<desktop-sm') {
     display: none !important;
   }
 }
 
-.visible-tablet {
+.visible-tablet,
+%visible-tablet {
   @include media('>=tablet-sm', '<desktop-sm') {
     display: block !important;
   }
 }
 
-.hidden-mobile {
+.hidden-mobile,
+%hidden-mobile {
   @include media('>=phone-sm', '<tablet-sm') {
     display: none !important;
   }
 }
 
-.visible-mobile {
+.visible-mobile,
+%visible-mobile {
   @include media('>=phone-sm', '<tablet-sm') {
     display: block !important;
   }
