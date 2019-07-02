@@ -5,6 +5,7 @@ theme = "project_theme"
 
 [menu]
   [[menu.main]]
+    identifier = "home"
     name = "Home"
     pre = "<i class='fa fa-heart'></i>"
     url = "/"
@@ -16,6 +17,20 @@ theme = "project_theme"
     url = "/blog/"
     weight = 2
   [[menu.main]]
-    parent = "blog"
-    name = "Blog post"
-    url = "/blog/post/"
+    identifier = "pages"
+    name = "Pages"
+    pre = "<i class='fa fa-heart'></i>"
+    url = "/blog/"
+    weight = 3
+  [[menu.main]]
+    parent = "pages"
+    name = "Single page"
+    url = "/pages/post/"
+  [[menu.main]]
+    parent = "pages"
+    name = "Category page"
+    url = "/pages/category/"
+  [[menu.main]]
+    parent = "pages"
+    name = "Error 404"
+    url = "/pages/404/"

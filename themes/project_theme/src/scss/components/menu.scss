@@ -1,0 +1,22 @@
+.menu {
+  @extend %listreset;
+  @extend %flex-row;
+  &__item {
+    margin: 0;
+    &:not(:last-child) {
+      margin: 0 15px 0 0;
+    }
+  }
+}
+
+.submenu {
+  @extend %listreset;
+  @extend %flex-column;
+  padding: 15px 0 0;
+  &__item {
+    margin: 0;
+    &:not(:last-child) {
+      margin: 0 0 1em;
+    }
+  }
+}
