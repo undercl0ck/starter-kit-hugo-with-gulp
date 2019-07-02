@@ -1,3 +1,50 @@
 <header class="page-header">
-  header
+  <div class="container">
+
+    <nav class="navigation">
+
+      {{ $page := .Page }}
+      {{ $site := .Site }}
+
+      {{ $list := .Site.Menus.main }}
+      {{ $len := (len $list) }}
+
+      <ul class="menu">
+        {{ range $list}}
+          {{ $is := $page.IsMenuCurrent "main" . }}
+          {{ $has := $page.HasMenuCurrent "main" . }}
+          <li id="{{ .Name | lower }}"
+              {{ if or $is $has }}
+                class="menu__item menu__item--active"
+              {{ else }}
+                class="menu__item"
+              {{ end }}>
+            {{ if .HasChildren }}
+              <a href="{{ .URL }}" class="menu__link">
+                {{ .Pre }}
+                <span>{{ .Name }}</span>
+              </a>
+              <ul class="submenu">
+                {{ range .Children }}
+                <li class="submenu__item">
+                  <a href="{{ .URL }}" class="submenu__link">{{ .Name }}</a>
+                </li>
+                {{ end }}
+              </ul>
+            {{ else }}
+              <a href="{{ .URL }}">
+                {{ .Pre }}
+                <span>{{ .Name }}</span>
+              </a>
+            {{ end }}
+          </li>
+        {{ end }}
+        <li class="menu__item">
+          <a href="#" class="menu__link" target="_blank">Hardcoded Link 1</a>
+        </li>
+      
+      </ul>
+    </nav>
+
+  </div>
 </header>

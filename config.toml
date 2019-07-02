@@ -2,3 +2,20 @@ baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "My New Hugo Site"
 theme = "project_theme"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    pre = "<i class='fa fa-heart'></i>"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    identifier = "blog"
+    name = "Blog"
+    pre = "<i class='fa fa-heart'></i>"
+    url = "/blog/"
+    weight = 2
+  [[menu.main]]
+    parent = "blog"
+    name = "Blog post"
+    url = "/blog/post/"
