@@ -4,6 +4,7 @@
 // Feel free with using ES6 here.
 
 // import {NAME} from './modules/...';
+import hamburger from './modules/hamburger';
 import pageScroll from './modules/pageScroll';
 
 (($) => {
@@ -11,5 +12,6 @@ import pageScroll from './modules/pageScroll';
   $(() => {
     $('#currentYear').text(`${new Date().getFullYear()}`);
     pageScroll.smoothScrolling();
+    hamburger.handler();
   });
 })(jQuery);
