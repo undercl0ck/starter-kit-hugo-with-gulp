@@ -30,8 +30,8 @@
               {{ end }}>
             {{ if .HasChildren }}
               <a href="{{ .URL }}" class="menu__link menu__link--submenu">
-                {{ .Pre }}
                 <span>{{ .Name }}</span>
+                {{ .Pre }}
               </a>
               <ul class="submenu">
                 {{ range .Children }}

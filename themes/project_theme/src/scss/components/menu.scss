@@ -2,9 +2,31 @@
   @extend %listreset;
   @extend %flex-row;
   &__item {
+    position: relative;
     margin: 0;
     &:not(:last-child) {
       margin: 0 15px 0 0;
+    }
+    &:hover {
+      .menu__link {
+        color: map-deep-get($colors, 'theme', 'logo-bg');
+      }
+      .submenu {
+        display: block;
+      }
+    }
+  }
+  &__link {
+    display: block;
+    padding: 10px 25px;
+    margin: 0;
+    color: map-deep-get($colors, 'theme', 'dark');
+    transition: color $animation-time ease;
+    &:hover {
+      color: map-deep-get($colors, 'theme', 'logo-bg');
+    }
+    [class^=icon] {
+      vertical-align: middle;
     }
   }
 }
@@ -12,11 +34,28 @@
 .submenu {
   @extend %listreset;
   @extend %flex-column;
-  padding: 15px 0 0;
+  position: absolute;
+  left: 0;
+  z-index: z('hight');
+  height: auto;
+  display: none;
+  background-color: map-deep-get($colors, 'theme', 'grey');
+  box-shadow: 0 0 3px 0 rgba(map-deep-get($colors, 'theme', 'satan'), 0.25);
   &__item {
     margin: 0;
-    &:not(:last-child) {
-      margin: 0 0 1em;
+    display: block;
+    width: 100%;
+    &:hover {
+      & > .submenu__link {
+        background-color: rgba(map-deep-get($colors, 'theme', 'satan'), 0.04);
+      }
     }
+  }
+  &__link {
+    display: block;
+    padding: 0 15px;
+    font: 400 12px/30px map-get($fonts, 'Abel');
+    color: map-deep-get($colors, 'theme', 'dark');
+    transition: all $animation-time ease;
   }
 }
