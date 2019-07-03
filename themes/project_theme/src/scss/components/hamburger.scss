@@ -1,15 +1,10 @@
 .hamburger {
-  display: none;
+  @include square(60px);
+  @include mobileVisible('tablet-lg');
   position: relative;
-  z-index: 10;
-  width: 60px;
-  height: 60px;
-  transform: rotate(0deg);
-  transition: all $animation-time ease-in-out;
+  z-index: z('hight');
   cursor: pointer;
-  @include media('<=tablet-lg') {
-    display: block;
-  }
+  display: block;
   &__item {
     display: block;
     position: absolute;
@@ -19,9 +14,8 @@
     height: 2px;
     width: 30px;
     background: #000;
-    border-radius: 9px;
-    transform: rotate(0deg);
-    transition: $animation-time ease-in-out;
+    border-radius: 8px;
+    transition: all $animation-time ease-in-out;
     &:nth-child(1) {
       top: 30px;
       .opened & {

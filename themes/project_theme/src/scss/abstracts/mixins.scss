@@ -125,3 +125,46 @@ The same usage like Relative centering */
   display: $display;
   position: $pos;
 }
+
+/*
+    Square
+
+    Usage:
+    .element {
+      @include square(60px);
+    }
+
+    CSS output: 
+    .element {
+      width: 60px;
+      height: 60px;
+    }
+*/
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+/*
+    Responsive switch
+
+    Usage:
+    .element {
+      @include square('tablet-lg');
+    }
+    CSS output: 
+    .element {
+      display: none;
+    }
+    @media (max-width: 1024px) {
+      .hamburger {
+        display: block;
+      }
+    }
+*/
+@mixin mobileVisible($breakPoint) {
+  display: none;
+  @include media('<=#{$breakPoint}') {
+    display: block;
+  }
+}
