@@ -1,3 +1,15 @@
 .page-footer {
-  // ...
+  padding: 15px 0;
+  .copyright {
+    margin: 0;
+    font: 400 12px/1.24em map-get($fonts, 'Abel');
+    color: map-deep-get($colors, 'theme', 'dark');
+    .author,
+    .company {
+      color: map-deep-get($colors, 'theme', 'dark');
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 }

@@ -20,6 +20,7 @@
     display: block;
     padding: 10px 25px;
     margin: 0;
+    font: 400 16px/1.24em map-get($fonts, 'Abel');
     color: map-deep-get($colors, 'theme', 'dark');
     transition: color $animation-time ease;
     &:hover {

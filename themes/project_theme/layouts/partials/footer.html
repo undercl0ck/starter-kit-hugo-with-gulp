@@ -1,4 +1,17 @@
-<footer class="page-footer">
-  footer <br/>
-  <p>Today is: <span id="currentYear"></span></p>
-</footer>
+{{ with .Site.Data.footer }}
+  {{ if .section_enable }}
+    
+  <footer class="page-footer" id="{{ .title | lower }}">
+    <div class="container">
+      <p class="copyright">
+        <span id="currentYear"></span>
+        ©
+        <a href="{{ .author_link }}" target="_blank" class="author">{{ .author }}</a>
+        |
+        <a href="{{ .company_link }}" target="_blank" class="company">{{ .company }}</a>
+      </p>
+    </div>
+  </footer>
+
+  {{ end }}
+{{ end }}
