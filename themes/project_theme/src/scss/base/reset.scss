@@ -8,7 +8,7 @@ html {
 }
 
 *, *:before, *:after {
-	box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 *::selection {
@@ -20,7 +20,7 @@ body {
   @include font-smoothing(on);
   background: map-deep-get($colors, 'base', 'white');
   color: map-deep-get($colors, 'base', 'lighten-black');
-  font: #{map-get($font-size, 'base')}/#{map-get($line-height, 'base')} #{map-get($fonts, 'Medium')};
+  font: #{map-get($font-size, 'base')}/#{map-get($line-height, 'base')} #{map-get($fonts, 'base-sans-serif')};
   min-width: map-get($breakpoints, 'phone-sm');
   height: 100%;
 }
