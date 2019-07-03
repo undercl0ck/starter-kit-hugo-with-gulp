@@ -6,7 +6,7 @@
     position: relative;
     height: 55px;
     margin: 20px 20px 20px 0;
-    background: #7577CD;
+    background: map-deep-get($colors, 'theme', 'logo-bg');
     &:before,
     &:after {
       @include pseudo;
@@ -17,11 +17,11 @@
     }
     &:before {
       top: -25px;
-      border-bottom: 25px solid #7577CD;
+      border-bottom: 25px solid map-deep-get($colors, 'theme', 'logo-bg');
     }
     &:after {
       bottom: -25px;
-      border-top: 25px solid #7577CD;
+      border-top: 25px solid map-deep-get($colors, 'theme', 'logo-bg');
     }
     img {
       position: absolute;
@@ -37,13 +37,13 @@
     position: relative;
     font: 38px/1.24em map-get($fonts, 'Abel');
     letter-spacing: 5px;
-    color: #313131;
+    color: map-deep-get($colors, 'theme', 'dark');
     &:before {
       @include pseudo;
       bottom: 0;
       width: 0;
       height: 2px;
-      background: #313131;
+      background: map-deep-get($colors, 'theme', 'dark');
       transition: width $animation-time ease;
     }
     &:hover:before {
