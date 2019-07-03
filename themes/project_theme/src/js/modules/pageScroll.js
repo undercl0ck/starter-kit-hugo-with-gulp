@@ -3,15 +3,16 @@ const pageScroll = {
     const $window = $(window);
     const $page = $('html, body');
     const $body = $('body');
-    const $menu = $('.navigation');
-    const $anchorLink = $('a[href^="/#"]');
+    const $menu = $('.menu');
+    const $anchorLink = $('a[href^="#"]');
     const ANIMATION_SPEED = 400;
     const HEADER_HEIGHT = 0;
     const OVERFLOW_CLASS = 'overflow-hidden';
-    const MOBILE_VIEW_ON = 980;
+    const MOBILE_VIEW_ON = 1024;
     function scrolling() {
-      $anchorLink.on('click', function scrollTo() {
-        const $position = $($.attr(this, 'href').replace('/', '')).offset().top;
+      $anchorLink.on('click', function scrollTo(event) {
+        event.preventDefault();
+        const $position = $($.attr(this, 'href')).offset().top;
         $page.animate({
           scrollTop: `${$position - HEADER_HEIGHT}px`,
         }, ANIMATION_SPEED);

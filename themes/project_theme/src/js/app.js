@@ -10,6 +10,6 @@ import pageScroll from './modules/pageScroll';
   // When DOM is ready
   $(() => {
     $('#currentYear').text(`${new Date().getFullYear()}`);
-    pageScroll.init();
+    pageScroll.smoothScrolling();
   });
 })(jQuery);

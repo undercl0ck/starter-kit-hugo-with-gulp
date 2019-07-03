@@ -20,7 +20,6 @@ theme = "project_theme"
     identifier = "pages"
     name = "Pages"
     pre = "<i class='fa fa-heart'></i>"
-    url = "/blog/"
     weight = 3
   [[menu.main]]
     parent = "pages"
