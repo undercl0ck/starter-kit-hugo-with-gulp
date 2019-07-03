@@ -2,13 +2,22 @@
 <html lang="en">
 
   <head>
+
     {{ partial "head/meta.html" }}
     {{ partial "head/favicon.html" }}
-    <title>{{ .Title }}</title>
+
+    <title>
+      {{ if eq (relURL .URL) ("/" | safeHTML) }}
+        {{ .Site.Params.Title }}
+      {{ else }}
+        {{ .Title }}
+      {{ end }}
+    </title>
 
     {{ $cssVendor := resources.Get "css/vendor.min.css" }}
     {{ $style := resources.Get "css/style.min.css" }}
     {{ $css := slice $cssVendor $style | resources.Concat "assets/css/styles.css" | resources.Minify }}
+    
     <link rel="stylesheet" href="{{ $css.Permalink }}">
 
   </head>
@@ -21,7 +30,7 @@
 
     <!-- Main start -->
     <main class="page-main">
-        {{ block "main" . }}{{ end }}
+      {{ block "main" . }}{{ end }}
     </main>
     <!-- Main end -->
 

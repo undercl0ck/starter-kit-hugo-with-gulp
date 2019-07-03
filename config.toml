@@ -33,3 +33,6 @@ theme = "project_theme"
     parent = "pages"
     name = "Error 404"
     url = "/pages/404/"
+
+[params]
+  title = "Hugo with Gulp starter kit"
