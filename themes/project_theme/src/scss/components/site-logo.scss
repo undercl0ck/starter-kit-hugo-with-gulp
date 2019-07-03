@@ -1,0 +1,53 @@
+.site-logo {
+  @extend %flex-row, %ai-center;
+  &--image {
+    max-width: 100px;
+    width: 100%;
+    position: relative;
+    height: 55px;
+    margin: 20px 20px 20px 0;
+    background: #7577CD;
+    &:before,
+    &:after {
+      @include pseudo;
+      @include square(0);
+      left: 0;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+    }
+    &:before {
+      top: -25px;
+      border-bottom: 25px solid #7577CD;
+    }
+    &:after {
+      bottom: -25px;
+      border-top: 25px solid #7577CD;
+    }
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 70px;
+      z-index: z('content');
+      margin: 0 auto;
+    }
+  }
+  span {
+    position: relative;
+    font: 38px/1.24em map-get($fonts, 'Abel');
+    letter-spacing: 5px;
+    color: #313131;
+    &:before {
+      @include pseudo;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: #313131;
+      transition: width $animation-time ease;
+    }
+    &:hover:before {
+      width: 100%;
+    }
+  }
+}
