@@ -49,6 +49,7 @@
     &:hover {
       & > .submenu__link {
         background-color: rgba(map-deep-get($colors, 'theme', 'satan'), 0.04);
+        border-color: map-deep-get($colors, 'theme', 'satan');
       }
     }
   }
@@ -57,6 +58,7 @@
     padding: 0 15px;
     font: 400 12px/30px map-get($fonts, 'Abel');
     color: map-deep-get($colors, 'theme', 'dark');
-    transition: all $animation-time ease;
+    border-left: 4px solid transparent;
+    transition: background-color $animation-time ease;
   }
 }
