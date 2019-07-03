@@ -1,7 +1,7 @@
 <header class="page-header">
   <div class="container">
 
-    <a href="/" class="site-logo">
+    <a href="{{ .Permalink }}" class="site-logo">
       <div class="site-logo--image">
         <img src="/images/logo.svg" alt="">
       </div>
@@ -17,9 +17,11 @@
       {{ $len := (len $list) }}
 
       <ul class="menu">
-        {{ range $list}}
+
+        {{ range $list }}
           {{ $is := $page.IsMenuCurrent "main" . }}
           {{ $has := $page.HasMenuCurrent "main" . }}
+
           <li id="{{ .Name | lower }}"
               {{ if or $is $has }}
                 class="menu__item menu__item--active"
@@ -39,13 +41,15 @@
                 {{ end }}
               </ul>
             {{ else }}
-              <a href="{{ .URL }}">
+              <a href="{{ .URL }}" class="menu__link">
                 {{ .Pre }}
                 <span>{{ .Name }}</span>
               </a>
             {{ end }}
           </li>
+
         {{ end }}
+
         <li class="menu__item">
           <a href="#" class="menu__link" target="_blank">Hardcoded Link 1</a>
         </li>

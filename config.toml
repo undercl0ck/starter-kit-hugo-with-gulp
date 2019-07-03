@@ -7,7 +7,6 @@ theme = "project_theme"
   [[menu.main]]
     identifier = "home"
     name = "Home"
-    pre = "<i class='fa fa-heart'></i>"
     url = "/"
     weight = 1
   [[menu.main]]
@@ -19,7 +18,7 @@ theme = "project_theme"
   [[menu.main]]
     identifier = "pages"
     name = "Pages"
-    pre = "<i class='fa fa-heart'></i>"
+    pre = "<i class='icon-arrow-down'></i>"
     weight = 3
   [[menu.main]]
     parent = "pages"
