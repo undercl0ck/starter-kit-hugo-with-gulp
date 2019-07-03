@@ -10,14 +10,14 @@
       {{ if eq (relURL .URL) ("/" | safeHTML) }}
         {{ .Site.Params.Title }}
       {{ else }}
-        {{ .Title }}
+      {{ .Site.Params.Title }} | {{ .Title }}
       {{ end }}
     </title>
 
     {{ $cssVendor := resources.Get "css/vendor.min.css" }}
     {{ $style := resources.Get "css/style.min.css" }}
     {{ $css := slice $cssVendor $style | resources.Concat "assets/css/styles.css" | resources.Minify }}
-    
+
     <link rel="stylesheet" href="{{ $css.Permalink }}">
 
   </head>
