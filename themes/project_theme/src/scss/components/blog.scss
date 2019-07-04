@@ -30,7 +30,7 @@
     }
     .summary {
       margin: 15px 0 0;
-      font: 14px/1.24em map-get($fonts, 'Abel');
+      font: 400 14px/1.24em map-get($fonts, 'SourceSansPro');
       letter-spacing: 0.5px;
       color: map-deep-get($colors, 'theme', 'satan');
     }

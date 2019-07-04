@@ -1,0 +1,14 @@
+.section-title {
+  .h2 {
+    margin: 0 0 5px;
+    font: bold 60px/1.24em map-get($fonts, 'Abel');
+    letter-spacing: 1.5px;
+    color: map-deep-get($colors, 'theme', 'dark');
+  }
+  .desctiption {
+    margin: 0;
+    font: 400 18px/1.24em map-get($fonts, 'SourceSansPro');
+    letter-spacing: .5px;
+    color: map-deep-get($colors, 'theme', 'satan');
+  }
+}
