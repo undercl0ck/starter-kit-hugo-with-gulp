@@ -1,15 +1,28 @@
 {{ define "main" }}
 
-  <div class="container">
+  <section class="s-blog">
+    <div class="container">
 
-    {{ range .Data.Pages }}
-      <div class="blog__post">
-        <a href="{{ .Permalink }}">
-          <h3 class="h3">{{ .Title }}</h3>
-        </a>
+      <div class="section-title">
+        <h2 class="h2">{{ .Title }}</h2>
+        <a href="/blog/" class="back-to-blog"><i class="icon-arrow-back"></i> Back to all posts</a>
       </div>
-    {{ end }}
-    
-  </div>
+      
+      <div class="categories">
+        
+        {{ range .Data.Pages }}
+          <div class="col-3 col-t-4 col-m-2">
+            <div class="category">
+              <a href="{{ .Permalink }}">
+                <h3 class="h3">{{ .Title }}</h3>
+              </a>
+            </div>
+          </div>
+        {{ end }}
+        
+      </div>
+      
+    </div>
+  </section>
 
 {{ end }}

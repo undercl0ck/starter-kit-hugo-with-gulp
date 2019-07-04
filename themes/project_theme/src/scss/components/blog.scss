@@ -1,10 +1,11 @@
-.blog {
+.blog,
+.categories {
   @extend %flex-row;
   margin: 30px -15px 0;
 }
 
-.blog__post {
-  @extend %flex-column;
+.blog__post,
+.category {
   height: 100%;
   box-shadow: 0 0 3px 0 rgba(map-deep-get($colors, 'theme', 'satan'), 0.25);
   transition: all $animation-time ease;
@@ -16,6 +17,10 @@
       transform: none;
     }
   }
+}
+
+.blog__post {
+  @extend %flex-column;
   &--image {
     display: block;
   }
@@ -52,5 +57,21 @@
     time {
       color: map-deep-get($colors, 'theme', 'satan');
     }
+  }
+}
+
+.category {
+  text-align: center;
+  &:hover {
+    a {
+      color: map-deep-get($colors, 'theme', 'dark');
+    }
+  }
+  a {
+    @include flex-centering;
+    height: inherit;
+    width: 100%;
+    color: map-deep-get($colors, 'theme', 'satan');
+    transition: color $animation-time ease;
   }
 }
