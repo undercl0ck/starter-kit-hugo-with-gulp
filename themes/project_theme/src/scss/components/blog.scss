@@ -10,9 +10,12 @@
   box-shadow: 0 0 3px 0 rgba(map-deep-get($colors, 'theme', 'satan'), 0.25);
   transition: all $animation-time ease;
   &:hover {
-    @extend %hidden-mobile;
     box-shadow: 0 0 8px 0 rgba(map-deep-get($colors, 'theme', 'satan'), 0.5);
     transform: scale(1.01);
+    @include media('<=tablet-lg') {
+      box-shadow: 0 0 3px 0 rgba(map-deep-get($colors, 'theme', 'satan'), 0.25);
+      transform: none;
+    }
   }
   &--image {
     display: block;
