@@ -23,9 +23,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-arrow-back:before {
+  content: "\e901";
+}
 .icon-arrow-down:before {
   content: "\e900";
-}
-.icon-home:before {
-  content: "\e901";
 }

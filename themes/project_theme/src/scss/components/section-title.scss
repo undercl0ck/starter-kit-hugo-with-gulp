@@ -5,10 +5,20 @@
     letter-spacing: 1.5px;
     color: map-deep-get($colors, 'theme', 'dark');
   }
-  .desctiption {
+  .desctiption, 
+  .back-to-blog {
     margin: 0;
     font: 400 18px/1.24em map-get($fonts, 'SourceSansPro');
     letter-spacing: .5px;
     color: map-deep-get($colors, 'theme', 'satan');
+  }
+  .back-to-blog {
+    transition: color $animation-time ease;
+    &:hover {
+      color: map-deep-get($colors, 'theme', 'dark');
+    }
+    [class^=icon] {
+      font-size: 16px;
+    }
   }
 }

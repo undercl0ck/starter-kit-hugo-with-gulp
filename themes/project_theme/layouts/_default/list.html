@@ -4,12 +4,25 @@
     <div class="container">
 
       <div class="section-title">
-        {{ with .Site.Data.example }}
-          {{ if .section_enable }}
-            <h2 class="h2">{{ .blog_title }}</h2>
-            <p class="desctiption">{{ .blog_description }}</p>
+
+        {{ if eq .Section "blog" }}
+
+          <!-- Title for blog page -->
+          {{ with .Site.Data.example }}
+            {{ if .section_enable }}
+              <h2 class="h2">{{ .blog_title }}</h2>
+              <p class="desctiption">{{ .blog_description }}</p>
+            {{ end }}
           {{ end }}
+
+        {{ else if eq .Section "category" }}
+
+          <!-- Title for other pages -->
+          <h2 class="h2">{{ .Title }}</h2>
+          <a href="/blog/" class="back-to-blog"><i class="icon-arrow-back"></i> Back to all posts</a>
+
         {{ end }}
+        
       </div>
       
       <div class="blog">
