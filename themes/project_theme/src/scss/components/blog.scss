@@ -1,0 +1,54 @@
+.blog {
+  @extend %flex-row;
+  justify-content: space-between;
+  margin: 30px -15px 0;
+}
+
+.blog__post {
+  @extend %flex-column;
+  height: 100%;
+  box-shadow: 0 0 3px 0 rgba(map-deep-get($colors, 'theme', 'satan'), 0.25);
+  transition: all $animation-time ease;
+  &:hover {
+    @extend %hidden-mobile;
+    box-shadow: 0 0 8px 0 rgba(map-deep-get($colors, 'theme', 'satan'), 0.5);
+    transform: scale(1.01);
+  }
+  &--image {
+    display: block;
+  }
+  &--info {
+    flex-grow: 1;
+    display: block;
+    padding: 15px;
+    .h3 {
+      font: bold 26px/1.24em map-get($fonts, 'Abel');
+      letter-spacing: 1.2px;
+      color: map-deep-get($colors, 'theme', 'dark');
+      max-height: 64px;
+      overflow: hidden;
+    }
+    .summary {
+      margin: 15px 0 0;
+      font: 14px/1.24em map-get($fonts, 'Abel');
+      letter-spacing: 0.5px;
+      color: map-deep-get($colors, 'theme', 'satan');
+    }
+  }
+  &--meta {
+    padding: 0 15px 15px;
+    display: flex;
+    justify-content: space-between;
+    .category {
+      font-weight: bold;
+      color: map-deep-get($colors, 'theme', 'satan');
+      transition: color $animation-time ease;
+      &:hover {
+        color: map-deep-get($colors, 'theme', 'dark');
+      }
+    }
+    time {
+      color: map-deep-get($colors, 'theme', 'satan');
+    }
+  }
+}
