@@ -5,7 +5,7 @@
 }
 
 .blog__post,
-.category {
+.categories .category {
   height: 100%;
   box-shadow: 0 0 3px 0 rgba(map-deep-get($colors, 'theme', 'satan'), 0.25);
   transition: all $animation-time ease;
