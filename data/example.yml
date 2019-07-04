@@ -1,0 +1,14 @@
+---
+title: "Example"
+section_enable: true
+
+# Footer
+author: "Daniil Aleksieiev"
+author_link: "https://www.linkedin.com/in/daniil-alekseev/"
+
+company: "Dashdevs LLC"
+company_link: "https://www.dashdevs.com/"
+
+# Blog page
+blog_title: "Blog"
+blog_description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry"
