@@ -3,6 +3,9 @@ languageCode = "en-us"
 title = "Hugo with Gulp starter kit"
 theme = "project_theme"
 
+[taxonomies]
+  category = "category"
+
 [menu]
   [[menu.main]]
     identifier = "home"
@@ -27,7 +30,7 @@ theme = "project_theme"
   [[menu.main]]
     parent = "pages"
     name = "Category page"
-    url = "/categories/"
+    url = "/category/"
   [[menu.main]]
     parent = "pages"
     name = "Error 404"

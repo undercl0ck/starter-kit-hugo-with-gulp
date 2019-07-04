@@ -7,10 +7,6 @@
         <a href="{{ .Permalink }}">
           <h3 class="h3">{{ .Title }}</h3>
         </a>
-        {{ with .Params.Category }}
-          <a href="/category{{ . | urlize | relURL }}" alt=""> {{ . }}</a>
-        {{ end }}
-        <p>{{ dateFormat "January 2, 2006" .Date }}</p>
       </div>
     {{ end }}
     
