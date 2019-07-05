@@ -77,6 +77,20 @@
     color: map-deep-get($colors, 'theme', 'satan');
     transition: color $animation-time ease;
   }
+  .h3 {
+    line-height: 1.24em;
+    @include media('<=desktop-md') {
+      font-size: 36px;
+      padding: 5px 0;
+    }
+    @include media('<=phone-lg') {
+      font-size: 28px;
+      padding: 10px 0;
+    }
+    @include media('<=phone-md') {
+      font-size: 22px;
+    }
+  }
 }
 
 .single-post {
