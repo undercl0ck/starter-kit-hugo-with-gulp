@@ -9,6 +9,10 @@
     height: 55px;
     margin: 20px 20px 20px 0;
     background: map-deep-get($colors, 'theme', 'logo-bg');
+    @include media('<=tablet-lg') {
+      max-width: 50px;
+      height: 35px;
+    }
     &:before,
     &:after {
       @include pseudo;
@@ -16,14 +20,25 @@
       left: 0;
       border-left: 50px solid transparent;
       border-right: 50px solid transparent;
+      @include media('<=tablet-lg') {
+        border-width: 25px;
+      }
     }
     &:before {
       top: -25px;
       border-bottom: 25px solid map-deep-get($colors, 'theme', 'logo-bg');
+      @include media('<=tablet-lg') {
+        top: -12.5px;
+        border-bottom: 12.5px solid map-deep-get($colors, 'theme', 'logo-bg');
+      }
     }
     &:after {
       bottom: -25px;
       border-top: 25px solid map-deep-get($colors, 'theme', 'logo-bg');
+      @include media('<=tablet-lg') {
+        bottom: -12.5px;
+        border-top: 12.5px solid map-deep-get($colors, 'theme', 'logo-bg');
+      }
     }
     img {
       position: absolute;
@@ -33,6 +48,9 @@
       max-width: 70px;
       z-index: z('content');
       margin: 0 auto;
+      @include media('<=tablet-lg') {
+        max-width: 40px;
+      }
     }
   }
   span {
@@ -40,6 +58,9 @@
     font: 38px/1.24em map-get($fonts, 'Abel');
     letter-spacing: 5px;
     color: map-deep-get($colors, 'theme', 'dark');
+    @include media('<=tablet-lg') {
+      font-size: 30px;
+    }
     &:before {
       @include pseudo;
       bottom: 0;
