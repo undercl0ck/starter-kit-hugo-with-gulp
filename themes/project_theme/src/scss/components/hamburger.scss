@@ -4,6 +4,9 @@
   position: relative;
   z-index: z('hight');
   cursor: pointer;
+  &.opened {
+    background: #fff;
+  }
   &__item {
     display: block;
     position: absolute;

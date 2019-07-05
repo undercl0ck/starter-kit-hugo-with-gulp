@@ -34,6 +34,9 @@
                 {{ .Pre }}
               </a>
               <ul class="submenu">
+                <li class="submenu__item submenu__item--static">
+                  <a href="#" class="submenu__link"><i class="icon-arrow-back"></i> Back</a>
+                </li>
                 {{ range .Children }}
                 <li class="submenu__item">
                   <a href="{{ .URL }}" class="submenu__link">{{ .Name }}</a>

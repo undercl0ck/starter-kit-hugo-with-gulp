@@ -1,15 +1,53 @@
+@keyframes menuSlideOpen {
+  0% {
+    left: -320px;
+  }
+  100% {
+    left: 0;
+  }
+}
+
 .menu {
   @extend %listreset;
   @extend %flex-row;
+  transition: all $animation-time ease-in-out;
+  @include media('<=tablet-lg') {
+    padding: 0 15px;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    z-index: z('hight');
+    max-width: 320px;
+    width: 100%;
+    height: 100vh;
+    left: -320px;
+    top: 0;
+    background: #fff;
+    &.opened {
+      display: flex;
+      animation: menuSlideOpen $animation-time;
+      left: 0;
+    }
+  }
   &__item {
     position: relative;
     margin: 0;
+    @include media('<=tablet-lg') {
+      position: static;
+    }
     &:not(:last-child) {
       margin: 0 15px 0 0;
+      @include media('<=tablet-lg') {
+        margin: 0;
+        padding: 0 0 15px;
+      }
     }
     &:hover {
       .menu__link {
         color: map-deep-get($colors, 'theme', 'logo-bg');
+        @include media('<=tablet-lg') {
+          color: initial;
+        }
       }
       .submenu {
         display: block;
@@ -28,11 +66,18 @@
     font: 400 16px/1.24em map-get($fonts, 'Abel');
     color: map-deep-get($colors, 'theme', 'dark');
     transition: color $animation-time ease;
+    @include media('<=tablet-lg') {
+      font-size: 32px;
+      padding: 0;
+    }
     &:hover {
       color: map-deep-get($colors, 'theme', 'logo-bg');
     }
     [class^=icon] {
       vertical-align: middle;
+      @include media('<=tablet-lg') {
+        display: none;
+      }
     }
   }
 }
@@ -47,14 +92,46 @@
   display: none;
   background-color: map-deep-get($colors, 'theme', 'grey');
   box-shadow: 0 0 3px 0 rgba(map-deep-get($colors, 'theme', 'satan'), 0.25);
+  transition: all $animation-time ease-in-out;
+  @include media('<=tablet-lg') {
+    display: flex !important;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: -100%;
+    justify-content: center;
+    &.opened {
+      animation: menuSlideOpen $animation-time;
+      left: 0;
+    }
+  }
   &__item {
     margin: 0;
     display: block;
     width: 100%;
+    @include media('<=tablet-lg') {
+      margin: 0;
+      padding: 0 15px 15px;
+    }
     &:hover {
       & > .submenu__link {
         background-color: rgba(map-deep-get($colors, 'theme', 'satan'), 0.04);
         border-color: map-deep-get($colors, 'theme', 'satan');
+        @include media('<=tablet-lg') {
+          background-color: transparent;
+          border-color: transparent;
+        }
+      }
+    }
+    &--static {
+      display: none;
+      position: absolute;
+      top: 30px;
+      @include media('<=tablet-lg') {
+        display: block;
+      }
+      [class^=icon] {
+        font-size: 26px;
       }
     }
   }
@@ -65,5 +142,20 @@
     color: map-deep-get($colors, 'theme', 'dark');
     border-left: 4px solid transparent;
     transition: background-color $animation-time ease;
+    @include media('<=tablet-lg') {
+      font-size: 32px;
+      padding: 0;
+    }
+  }
+}
+
+.overlay {
+  overflow: hidden;
+  &:before {
+    @include pseudo;
+    z-index: z('low');
+    width: 100%;
+    height: 100vh;
+    background: rgba(map-deep-get($colors, 'theme', 'dark'), .75);
   }
 }
