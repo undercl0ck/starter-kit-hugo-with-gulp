@@ -1,7 +1,26 @@
 {{ define "main" }}
 
-  <div class="container">
-    POST
-  </div>
+  <section class="s-blog">
+    <div class="container">
+
+      <div class="section-title">
+        <h2 class="h2">{{ .Title }}</h2>
+        <a href="/blog/" class="back-to-blog"><i class="icon-arrow-back"></i> Back to all posts</a>
+      </div>
+
+      <article class="single-post">
+
+        <div class="single-post__image">
+          <img src="{{ .Params.Image }}" alt="{{ .Title }}">
+        </div>
+
+        <div class="single-post__content">
+          {{ .Content }}
+        </div>
+
+      </article>
+      
+    </div>
+  </section>
 
 {{ end }}

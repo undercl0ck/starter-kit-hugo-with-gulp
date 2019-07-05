@@ -4,6 +4,14 @@
     font: bold 60px/1.24em map-get($fonts, 'Abel');
     letter-spacing: 1.5px;
     color: map-deep-get($colors, 'theme', 'dark');
+    @include media('<=tablet-lg') {
+      font-size: 45px;
+      letter-spacing: 1px;
+    }
+    @include media('<=phone-lg') {
+      font-size: 30px;
+      letter-spacing: .75px;
+    }
   }
   .desctiption, 
   .back-to-blog {
@@ -11,6 +19,10 @@
     font: 400 18px/1.24em map-get($fonts, 'SourceSansPro');
     letter-spacing: .5px;
     color: map-deep-get($colors, 'theme', 'satan');
+    @include media('<=phone-lg') {
+      font-size: 14px;
+      letter-spacing: .2px;
+    }
   }
   .back-to-blog {
     transition: color $animation-time ease;
@@ -19,6 +31,9 @@
     }
     [class^=icon] {
       font-size: 16px;
+      @include media('<=phone-lg') {
+        font-size: 12px;
+      }
     }
   }
 }

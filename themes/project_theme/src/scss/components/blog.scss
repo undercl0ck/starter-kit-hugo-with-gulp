@@ -78,3 +78,25 @@
     transition: color $animation-time ease;
   }
 }
+
+.single-post {
+  padding: 30px 0;
+  &__image {
+    margin: 0 0 30px;
+  }
+  &__content {
+    max-width: 70%;
+    margin: 0 auto;
+    @include media('<=tablet-md') {
+      min-width: 100%;
+    }
+    p {
+      font: 18px/1.5em map-get($fonts, 'SourceSansPro');
+      margin: 0 0 1em;
+      color: map-deep-get($colors, 'theme', 'dark');
+      @include media('<=tablet-md') {
+        font-size: 14px;
+      }
+    }
+  }
+}
