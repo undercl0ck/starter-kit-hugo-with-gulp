@@ -29,6 +29,7 @@ const hamburger = {
     function init() {
       if (!$btn.length) return;
       hamburgerToggle();
+      if (!$submenu.length) return;
       submenuToggle();
     }
     return {
