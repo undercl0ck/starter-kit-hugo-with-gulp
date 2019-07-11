@@ -7,10 +7,11 @@
     {{ partial "head/favicon.html" }}
 
     <title>
+      <!-- Page address check -->
       {{ if eq (relURL .URL) ("/" | safeHTML) }}
         {{ .Site.Params.Title }}
       {{ else }}
-      {{ .Site.Params.Title }} | {{ .Title }}
+        {{ .Site.Params.Title }} | {{ .Title }}
       {{ end }}
     </title>
 
@@ -30,7 +31,7 @@
 
     {{ $pageID := "" }}
 
-    {{/* Page address check */}}
+    <!-- Page address check -->
     {{ if .IsHome }}
       {{ $pageID = "home-page" }}
     {{ else if eq .Section "blog" }}
