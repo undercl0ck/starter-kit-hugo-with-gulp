@@ -6,8 +6,8 @@
     {{ partial "head/meta.html" }}
     {{ partial "head/favicon.html" }}
 
+    <!-- Page address check -->
     <title>
-      <!-- Page address check -->
       {{ if eq (relURL .URL) ("/" | safeHTML) }}
         {{ .Site.Params.Title }}
       {{ else }}
