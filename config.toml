@@ -25,10 +25,6 @@ theme = "project_theme"
     weight = 3
   [[menu.main]]
     parent = "pages"
-    name = "Single page"
-    url = "/test/"
-  [[menu.main]]
-    parent = "pages"
     name = "Category page"
     url = "/category/"
   [[menu.main]]

@@ -1,0 +1,10 @@
+.page-main {
+  &#home-page {
+    @extend %flex-column;
+    align-items: center;
+    justify-content: center;
+  }
+  .main-page {
+    text-align: center;
+  }
+}
