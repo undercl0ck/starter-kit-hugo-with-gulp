@@ -28,8 +28,17 @@
 
     {{ block "header" . }}{{ partial "header.html" . }}{{ end }}
 
+    {{ $pageID := "" }}
+
+    {{/* Page address check */}}
+    {{ if .IsHome }}
+      {{ $pageID = "home-page" }}
+    {{ else if eq .Section "blog" }}
+      {{ $pageID = "blog" }}
+    {{ end }}
+
     <!-- Main start -->
-    <main class="page-main">
+    <main class="page-main" id="{{ $pageID }}">
       {{ block "main" . }}{{ end }}
     </main>
     <!-- Main end -->
