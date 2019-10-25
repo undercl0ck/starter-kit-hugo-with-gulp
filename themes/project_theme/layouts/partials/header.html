@@ -3,7 +3,7 @@
 
     <a href="/" class="site-logo">
       <div class="site-logo--image">
-        <img src="/images/logo.svg" alt="">
+        <img src="./images/logo.svg" alt="">
       </div>
       <span>HGSK</span>
     </a>
@@ -39,12 +39,12 @@
                 </li>
                 {{ range .Children }}
                 <li class="submenu__item">
-                  <a href="{{ .URL }}" class="submenu__link">{{ .Name }}</a>
+                  <a href="{{ .URL | absURL }}" class="submenu__link">{{ .Name }}</a>
                 </li>
                 {{ end }}
               </ul>
             {{ else }}
-              <a href="{{ .URL }}" class="menu__link">
+              <a href="{{ .URL | absURL }}" class="menu__link">
                 {{ .Pre }}
                 <span>{{ .Name }}</span>
               </a>
