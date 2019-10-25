@@ -14,8 +14,11 @@ fields:
 - type: datetime
   name: date
   label: date
-- type: text
-  name: image
+  default: now
+- name: image
+  type: file
+  config:
+    maxSize: 250
   label: image
 pages:
 - content/blog/posts/test-post-from-foresty.md
