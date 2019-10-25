@@ -1,12 +1,15 @@
 language: node_js
 node_js: stable
 
+install:
+  - wget -O /tmp/hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.52/hugo_0.52_Linux-64bit.deb
+  - sudo dpkg -i /tmp/hugo.deb
+
 cache:
   directories:
     - node_modules
 
 before_deploy:
-  - "brew install hugo"
   - "npm install"
   - "gulp build"
 
