@@ -1,4 +1,4 @@
-baseURL = "http://example.org/"
+baseURL = "https://daniil-aleksieiev.github.io/starter-kit-hugo-with-gulp/"
 languageCode = "en-us"
 title = "Hugo with Gulp starter kit"
 theme = "project_theme"
