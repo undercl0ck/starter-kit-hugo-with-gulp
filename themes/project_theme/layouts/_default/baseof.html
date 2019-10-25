@@ -18,8 +18,8 @@
     {{ $cssVendor := resources.Get "css/vendor.min.css" }}
     {{ $style := resources.Get "css/style.min.css" }}
     {{ $css := slice $cssVendor $style | resources.Concat "assets/css/styles.css" | resources.Minify }}
-
-    <link rel="stylesheet" href="{{ $css.Permalink }}">
+    
+    <link rel="stylesheet" href="./assets/css/styles.min.css">
 
   </head>
 
