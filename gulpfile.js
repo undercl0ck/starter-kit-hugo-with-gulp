@@ -1,14 +1,14 @@
 (() => {
   'use strict';
 
-  const cfg         = require('./gulp-config.js'),
-        self        = this,
-        gulp        = require('gulp'),
-        del         = require('del'),
-        path        = require('path'),
-        notifier    = require('node-notifier'),
-        gutil       = require('gulp-util'),
-        shell       = require('gulp-shell');
+  const cfg = require('./gulp-config.js'),
+    self = this,
+    gulp = require('gulp'),
+    del = require('del'),
+    path = require('path'),
+    notifier = require('node-notifier'),
+    gutil = require('gulp-util'),
+    shell = require('gulp-shell');
 
   /**
    * Require gulp task from file
@@ -118,7 +118,7 @@
    * Clean public dir
    */
   gulp.task(`${cfg.task.cleanPublic}`, shell.task('rm -rf public'));
-  
+
   /**
    * Build Hugo
    */
@@ -156,11 +156,29 @@
       cfg.task.buildStylesVendors,
       cfg.task.esLint
     ),
-    // cfg.task.copyFolders,
     cfg.task.buildHugo,
     gulp.parallel(
       cfg.task.watch
     )
+  ));
+
+  /**
+   * Build task
+   */
+  gulp.task('build', gulp.series(
+    gulp.parallel(
+      cfg.task.cleanBuild,
+      cfg.task.cleanPublic
+    ),
+    gulp.parallel(
+      cfg.task.buildCustomJs,
+      cfg.task.buildJsVendors,
+      cfg.task.buildSass,
+      cfg.task.buildSassFiles,
+      cfg.task.buildStylesVendors,
+      cfg.task.esLint
+    ),
+    cfg.task.buildHugo
   ));
 
   /**
