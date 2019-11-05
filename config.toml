@@ -3,6 +3,10 @@ languageCode = "en-us"
 theme = "project_theme"
 title = "Hugo with Gulp starter kit"
 [[menu.main]]
+name = "test"
+url = "google.com"
+weight = 4
+[[menu.main]]
 name = "Error 404"
 parent = "Pages"
 url = "/404.html/"
