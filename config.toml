@@ -2,37 +2,35 @@ baseURL = "https://daniil-aleksieiev.github.io/starter-kit-hugo-with-gulp/"
 languageCode = "en-us"
 theme = "project_theme"
 title = "Hugo with Gulp starter kit"
-[[menu.main]]
-name = "test"
-url = "google.com"
-weight = 4
-[[menu.main]]
-name = "Error 404"
-parent = "Pages"
-url = "/404.html/"
-weight = 2
-[[menu.main]]
-name = "Category page"
-parent = "Pages"
-url = "/category/"
-weight = 1
-[[menu.main]]
-identifier = "pages"
-name = "Pages"
-pre = "<i class='icon-arrow-down'></i>"
-weight = 3
-[[menu.main]]
-identifier = "blog"
-name = "Blog"
-pre = "<i class='fa fa-heart'></i>"
-url = "/blog/"
-weight = 2
-[[menu.main]]
-identifier = "home"
-name = "Home"
-url = "/"
-weight = 1
+
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    identifier = "blog"
+    name = "Blog"
+    pre = "<i class='fa fa-heart'></i>"
+    url = "/blog/"
+    weight = 2
+  [[menu.main]]
+    identifier = "pages"
+    name = "Pages"
+    pre = "<i class='icon-arrow-down'></i>"
+    weight = 3
+  [[menu.main]]
+    parent = "pages"
+    name = "Category page"
+    url = "/category/"
+  [[menu.main]]
+    parent = "pages"
+    name = "Error 404"
+    url = "/404.html/"
+
 [params]
 title = "Hugo with Gulp starter kit"
+
 [taxonomies]
 category = "category"
