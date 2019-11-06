@@ -11,8 +11,10 @@ fields:
 - type: datetime
   name: date
   label: date
-- type: text
-  name: image
+- name: image
+  type: file
+  config:
+    maxSize: 250
   label: image
 - type: text
   name: description
