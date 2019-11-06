@@ -19,6 +19,8 @@ fields:
 - type: text
   name: description
   label: description
-- type: list
-  name: keywords
+- name: keywords
+  type: tag_list
+  default:
+  - hgsk
   label: keywords
