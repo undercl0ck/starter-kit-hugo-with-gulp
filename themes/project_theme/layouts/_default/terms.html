@@ -5,11 +5,11 @@
 
       <div class="section-title">
         <h2 class="h2">{{ .Title }}</h2>
-        <a href="/blog/" class="back-to-blog"><i class="icon-arrow-back"></i> Back to all posts</a>
+        <a href="{{ .Site.BaseURL }}/blog/" class="back-to-blog"><i class="icon-arrow-back"></i> Back to all posts</a>
       </div>
-      
+
       <div class="categories">
-        
+
         {{ range .Data.Pages }}
           <div class="col-3 col-t-6 col-m-2">
             <div class="category">
@@ -19,9 +19,9 @@
             </div>
           </div>
         {{ end }}
-        
+
       </div>
-      
+
     </div>
   </section>
 
