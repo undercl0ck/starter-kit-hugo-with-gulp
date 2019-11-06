@@ -45,3 +45,5 @@ fields:
   default:
   - hgsk
   label: keywords
+pages:
+- content/blog/posts/test-post-from-foresty.md

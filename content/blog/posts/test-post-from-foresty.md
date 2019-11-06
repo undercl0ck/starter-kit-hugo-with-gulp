@@ -1,7 +1,9 @@
 +++
-category = "No category"
+category = "Uncategorized"
 date = 2019-10-24T21:00:00Z
-image = ""
+description = "Post description"
+image = "/images/SF.jpeg"
+keywords = ["hgsk"]
 title = "Test post from Foresty"
 url = ""
 
