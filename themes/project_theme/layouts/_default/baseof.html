@@ -2,66 +2,68 @@
 <html lang="en">
 
 <head>
-  
+
   {{ partial "head/meta.html" }}
   {{ partial "head/favicon.html" }}
-  
-  <!-- Page address check -->
-  <title>
-    {{ if eq (relURL .URL) ("/" | safeHTML) }}
-    {{ .Site.Params.Title }}
-    {{ else }}
-    {{ .Site.Params.Title }} | {{ .Title }}
-    {{ end }}
-  </title>
-  
+
+  {{ $title := (printf "%s | %s" "HGSK" .Title) }}
+  {{ $id := .Title | urlize }}
+  {{ $pageURL := .RelPermalink }}
+  {{ $addURL := .Site.Params.addURL }}
+
+  {{ if .IsHome }}
+    {{ $id = "home-page" }}
+  {{ else if eq $pageURL (printf "/%s/%s/" $addURL "blog") }}
+    {{ $id = "blog-page" }}
+  {{ else if hasPrefix $pageURL (printf "/%s/%s/%s/" $addURL "blog" "posts") }}
+    {{ $title = .Title }}
+  {{ else if hasPrefix $pageURL (printf "/%s/%s/" $addURL "category") }}
+    {{ $title = (printf "%s: %s" "Category" .Title) }}
+    {{ $id = "category-page" }}
+  {{ end }}
+
+  <title>{{ $title }}</title>
+
   {{ $cssVendor := resources.Get "css/vendor.min.css" }}
   {{ $style := resources.Get "css/style.min.css" }}
   {{ $css := slice $cssVendor $style | resources.Concat "assets/css/styles.css" | resources.Minify }}
-  
+
+  {{ $pathToIcons := "fonts/icomoon/icomoon.woff?9e0ffy" | absURL }}
+
   <style>
     @font-face {
       font-family: 'icomoon';
-      src: url('{{ "fonts/icomoon/icomoon.woff?9e0ffy" | absURL }}') format('woff');
+      src: url("{{ $pathToIcons }}") format("woff");
       font-weight: normal;
       font-style: normal;
     }
   </style>
-  
+
   <link rel="stylesheet" href="{{ $css.Permalink }}">
-  
+
 </head>
 
 <body>
-  
+
   <div id="wrapper">
-    
+
     {{ block "header" . }}{{ partial "header.html" . }}{{ end }}
-    
-    {{ $pageID := "" }}
-    
-    <!-- Page address check -->
-    {{ if .IsHome }}
-    {{ $pageID = "home-page" }}
-    {{ else if eq .Section "blog" }}
-    {{ $pageID = "blog" }}
-    {{ end }}
-    
+
     <!-- Main start -->
-    <main class="page-main" id="{{ $pageID }}">
+    <main class="page-main" id="{{ $id }}">
       {{ block "main" . }}{{ end }}
     </main>
     <!-- Main end -->
-    
+
     {{ block "footer" . }}{{ partial "footer.html" . }}{{ end }}
-    
+
   </div>
-  
+
   {{ $jsVendor := resources.Get "js/vendor.min.js" }}
   {{ $app := resources.Get "js/app.js" }}
   {{ $js := slice $jsVendor $app | resources.Concat "assets/js/common.js" | resources.Minify }}
-  
+
   <script src="{{ $js.Permalink }}" defer></script>
-  
+
 </body>
 </html>

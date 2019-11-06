@@ -1,7 +1,6 @@
 +++
 title = "Mixins"
 category = "SASS"
-url = "mixins"
 date = "2019-07-03T00:00:00+02:00"
 image = "https://via.placeholder.com/1920x1080"
 +++
