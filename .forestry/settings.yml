@@ -19,7 +19,7 @@ sections:
   label: Blog
   create: documents
   match: "*"
-upload_dir: static/images
+upload_dir: themes/project_theme/static/images
 public_path: "/images"
 front_matter_path: ''
 use_front_matter_path: false
