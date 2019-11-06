@@ -23,6 +23,15 @@
   {{ end }}
 
   <title>{{ $title }}</title>
+  <meta property="og:title" content="{{ $title }}" />
+  <meta property="og:site_name" content="{{ $title }}" />
+  <meta name="twitter:title" content="{{ $title }}" />
+
+  <meta name="description" content="{{ .Params.description }}" />
+  <meta property="og:description" content="{{ .Params.description }}" />
+  <meta name="twitter:description" content="{{ .Params.description }}" />
+
+  <meta name="keywords" content="{{ .Params.keywords }}" />
 
   {{ $cssVendor := resources.Get "css/vendor.min.css" }}
   {{ $style := resources.Get "css/style.min.css" }}
