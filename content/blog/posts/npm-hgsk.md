@@ -1,7 +1,6 @@
 +++
 title = "NPM HGSK"
 category = "Production"
-url = "npm-hgsk"
 date = "2019-07-02T00:00:00+02:00"
 image = "https://via.placeholder.com/1920x1080"
 +++

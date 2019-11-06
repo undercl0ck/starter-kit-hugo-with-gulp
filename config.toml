@@ -2,6 +2,7 @@ baseURL = "https://daniil-aleksieiev.github.io/starter-kit-hugo-with-gulp/"
 languageCode = "en-us"
 theme = "project_theme"
 title = "Hugo with Gulp starter kit"
+disableHugoGeneratorInject = true
 
 [menu]
   [[menu.main]]
@@ -30,7 +31,8 @@ title = "Hugo with Gulp starter kit"
     url = "/404.html/"
 
 [params]
-title = "Hugo with Gulp starter kit"
+  title = "Hugo with Gulp starter kit"
+  addURL = "starter-kit-hugo-with-gulp"
 
 [taxonomies]
-category = "category"
+  category = "category"

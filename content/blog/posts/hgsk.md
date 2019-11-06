@@ -1,7 +1,10 @@
 +++
 title = "HGSK"
 category = "Production"
-url = "hgsk"
+aliases = [
+    "hgsk",
+    "hgsk-page"
+]
 date = "2019-07-01T00:00:00+02:00"
 image = "https://via.placeholder.com/1920x1080"
 +++

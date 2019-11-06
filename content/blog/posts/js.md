@@ -1,7 +1,6 @@
 +++
 title = "Javascript"
 category = "Javascript"
-url = "js"
 date = "2019-07-04T00:00:00+02:00"
 image = "https://via.placeholder.com/1920x1080"
 +++
