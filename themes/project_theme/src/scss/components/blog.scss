@@ -26,6 +26,13 @@
   @extend %flex-column;
   &--image {
     display: block;
+    max-height: 200px;
+    overflow: hidden;
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
   }
   &--info {
     flex-grow: 1;

@@ -19,19 +19,19 @@
 
           <!-- Title for other pages -->
           <h2 class="h2">{{ .Title }}</h2>
-          <a href="/blog/" class="back-to-blog"><i class="icon-arrow-back"></i> Back to all posts</a>
+          <a href="{{ .Site.BaseURL }}/blog/" class="back-to-blog"><i class="icon-arrow-back"></i> Back to all posts</a>
 
         {{ end }}
-        
+
       </div>
-      
+
       <div class="blog">
-        
+
         {{ range .Data.Pages }}
           <div class="col-4 col-t-6 col-m-4">
             <div class="blog__post">
               <a href="{{ .Permalink }}" title="{{ .Title }}" class="blog__post--image">
-                <img src="{{ .Params.image }}" alt="{{ .Title }}">
+                <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}">
               </a>
               <a href="{{ .Permalink }}" title="{{ .Title }}" class="blog__post--info">
                 <h3 class="h3">{{ .Title }}</h3>
@@ -39,16 +39,19 @@
               </a>
               <div class="blog__post--meta">
                 {{ with .Params.Category }}
-                  <a href="/category{{ . | urlize | relURL }}" title="Category: {{ . }}" class="category"> {{ . }}</a>
+                  {{ $name := . | urlize }}
+                  {{ $siteURL := $.Site.BaseURL }}
+                  {{ $url := (printf "%s/%s/%s/" $siteURL "category" $name) }}
+                  <a href="{{ $url }}" title="Category: {{ . }}" class="category"> {{ . }}</a>
                 {{ end }}
                 <time>{{ dateFormat "January 2, 2006" .Date }}</time>
               </div>
             </div>
           </div>
         {{ end }}
-        
+
       </div>
-      
+
     </div>
   </section>
 

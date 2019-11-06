@@ -5,13 +5,13 @@
 
       <div class="section-title">
         <h2 class="h2">{{ .Title }}</h2>
-        <a href="/blog/" class="back-to-blog"><i class="icon-arrow-back"></i> Back to all posts</a>
+        <a href="{{ .Site.BaseURL }}/blog/" class="back-to-blog"><i class="icon-arrow-back"></i> Back to all posts</a>
       </div>
 
       <article class="single-post">
 
         <div class="single-post__image">
-          <img src="{{ .Params.Image }}" alt="{{ .Title }}">
+          <img src="{{ .Params.Image | relURL }}" alt="{{ .Title }}">
         </div>
 
         <div class="single-post__content">
@@ -19,7 +19,7 @@
         </div>
 
       </article>
-      
+
     </div>
   </section>
 
