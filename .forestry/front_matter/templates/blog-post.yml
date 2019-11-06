@@ -5,20 +5,41 @@ fields:
 - type: text
   name: title
   label: title
-- type: text
-  name: category
+  config:
+    required: true
+- name: category
+  type: select
+  default: Uncategorized
+  config:
+    required: true
+    options:
+    - Sass
+    - JavaScript
+    - Hugo
+    - Production
+    - Uncategorized
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
   label: category
 - type: datetime
   name: date
   label: date
+  config:
+    required: true
+  default: now
 - name: image
   type: file
   config:
-    maxSize: 250
+    maxSize: '1'
   label: image
 - type: text
   name: description
   label: description
+  config:
+    required: true
 - name: keywords
   type: tag_list
   default:
