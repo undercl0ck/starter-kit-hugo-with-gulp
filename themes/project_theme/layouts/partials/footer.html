@@ -1,6 +1,6 @@
 {{ with .Site.Data.example }}
   {{ if .section_enable }}
-    
+
   <footer class="page-footer" id="{{ .title | lower }}">
     <div class="container">
       <p class="copyright">
@@ -10,6 +10,7 @@
         |
         <a href="{{ .company_link }}" target="_blank" class="company">{{ .company }}</a>
       </p>
+      {{ getenv "TRAVIS_BUILD_NUMBER" }}
     </div>
   </footer>
 
