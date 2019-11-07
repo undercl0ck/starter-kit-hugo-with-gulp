@@ -10,7 +10,10 @@
         |
         <a href="{{ .company_link }}" target="_blank" class="company">{{ .company }}</a>
       </p>
-      {{ getenv "TRAVIS_BUILD_NUMBER" }}
+      <p class="build-number">
+        build
+        <span>{{ getenv "TRAVIS_BUILD_NUMBER" }}</span>
+      </p>
     </div>
   </footer>
 
