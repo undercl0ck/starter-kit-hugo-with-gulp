@@ -1,4 +1,4 @@
-# Hugo default output directory 
+# Hugo default output directory
 -W/
 -d/
 public/
@@ -17,3 +17,6 @@ $RECYCLE.BIN/
 
 # OSX
 *.DS_Store
+
+# IDE
+.idea/
