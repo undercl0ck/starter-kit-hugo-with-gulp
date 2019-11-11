@@ -22,22 +22,18 @@ $grid: (
 );
 
 $font-size: (
-  'h1-font-size': 90px,
-  'h2-font-size': 75px,
-  'h3-font-size': 48px,
-  'h4-font-size': 30px,
-  'h5-font-size': 28px,
-  'h6-font-size': 18px,
+  'h1-font-size': 4em,
+  //'h2-font-size': 3em,
+  'h3-font-size': 2em,
+  'h4-font-size': 1.24em,
   'base': 16px
 );
 
 $line-height: (
   'h1-line-height': 1.5,
-  'h2-line-height': 1.5,
+  //'h2-line-height': 1.5,
   'h3-line-height': 1.5,
   'h4-line-height': 1.5,
-  'h5-line-height': 1.5,
-  'h6-line-height': 1.5,
   'base': 1.24em
 );
 

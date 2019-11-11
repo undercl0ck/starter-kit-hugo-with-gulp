@@ -4,7 +4,19 @@
     align-items: center;
     justify-content: center;
   }
-  .main-page {
-    text-align: center;
+  .docs {
+    max-width: 768px;
+    margin: 0 auto;
+    @include media('<tablet-md') {
+      max-width: 100%;
+    }
+    h1 {
+      text-align: center;
+      margin: 0 0 30px;
+      @include media('<tablet-md') {
+        font-size: 3em;
+        margin: 0 0 15px;
+      }
+    }
   }
 }
