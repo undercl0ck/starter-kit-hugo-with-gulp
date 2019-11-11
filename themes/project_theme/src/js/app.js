@@ -4,6 +4,8 @@
 // Feel free with using ES6 here.
 
 // import {NAME} from './modules/...';
+import hljs from 'highlight.js/lib/highlight';
+import javascript from 'highlight.js/lib/languages/javascript';
 import hamburger from './modules/hamburger';
 import pageScroll from './modules/pageScroll';
 
@@ -13,5 +15,7 @@ import pageScroll from './modules/pageScroll';
     $('#currentYear').text(`${new Date().getFullYear()}`);
     pageScroll.smoothScrolling();
     hamburger.handler();
+    hljs.registerLanguage('javascript', javascript);
+    hljs.initHighlightingOnLoad();
   });
 })(jQuery);
