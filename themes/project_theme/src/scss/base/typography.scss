@@ -36,11 +36,15 @@ h2, .h2 {
 h3, .h3 {
   font-size: map-get($font-size, 'h3-font-size');
   line-height: map-get($line-height, 'h3-line-height');
+  margin: 0 0 15px;
+  letter-spacing: .4px;
 }
 
 h4, .h4 {
   font-size: map-get($font-size, 'h4-font-size');
   line-height: map-get($line-height, 'h4-line-height');
+  margin: 0 0 10px;
+  letter-spacing: .25px;
 }
 
 h5, .h5 {

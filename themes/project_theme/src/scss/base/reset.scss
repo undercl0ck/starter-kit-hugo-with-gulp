@@ -23,6 +23,7 @@ body {
   font: #{map-get($font-size, 'base')}/#{map-get($line-height, 'base')} #{map-get($fonts, 'base-sans-serif')};
   min-width: map-get($breakpoints, 'phone-sm');
   height: 100%;
+  display: none;
 }
 
 #wrapper {
