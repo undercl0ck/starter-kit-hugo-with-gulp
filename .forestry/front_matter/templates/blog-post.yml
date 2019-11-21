@@ -2,6 +2,13 @@
 label: Blog post
 hide_body: false
 fields:
+- name: test
+  type: tag_list
+  default:
+  - test
+  - test1
+  - test2
+  label: test
 - type: text
   name: title
   label: title
@@ -45,12 +52,5 @@ fields:
   default:
   - hgsk
   label: keywords
-- name: test
-  type: tag_list
-  default:
-  - test
-  - test1
-  - test2
-  label: test
 pages:
 - content/blog/posts/test-post-from-foresty.md
