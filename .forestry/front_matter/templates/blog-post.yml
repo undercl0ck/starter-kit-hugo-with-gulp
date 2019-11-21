@@ -45,5 +45,12 @@ fields:
   default:
   - hgsk
   label: keywords
+- name: test
+  type: tag_list
+  default:
+  - test
+  - test1
+  - test2
+  label: test
 pages:
 - content/blog/posts/test-post-from-foresty.md
